@@ -27,8 +27,33 @@ registerButton.addEventListener("click", async () => {
 
         // Send the credential to the server for validation and storage
         // Store publicKeyCredential on the server
-        console.log("Credential registered:", publicKeyCredential);
+        alert.log("Credential registered:", publicKeyCredential);
     } catch (error) {
-        console.error("Registration failed:", error);
+        alert.error("Registration failed:", error);
     }
 });
+// webauthn.js
+
+const loginButton = document.getElementById("loginButton");
+
+loginButton.addEventListener("click", async () => {
+    try {
+        // Request an authentication
+        const publicKeyCredential = await navigator.credentials.get({
+            publicKey: {
+                challenge: new Uint8Array(32),
+                rpId: "yourwebsite.com",
+                allowCredentials: [
+                    // Retrieve the user's registered credentials from the server
+                    // (They must have been stored during registration)
+                ],
+            },
+        });
+
+        // Send the publicKeyCredential to the server for validation
+        alert.log("Authentication successful:", publicKeyCredential);
+    } catch (error) {
+        alert.error("Authentication failed:", error);
+    }
+});
+
