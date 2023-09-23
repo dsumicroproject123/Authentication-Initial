@@ -27,9 +27,9 @@ registerButton.addEventListener("click", async () => {
 
         // Send the credential to the server for validation and storage
         // Store publicKeyCredential on the server
-        alert.log("Credential registered:", publicKeyCredential);
+        alert("Credential registered:", publicKeyCredential);
     } catch (error) {
-        alert.error("Registration failed:", error);
+        alert("Registration failed:", error);
     }
 });
 // webauthn.js
@@ -51,9 +51,9 @@ loginButton.addEventListener("click", async () => {
         });
 
         // Send the publicKeyCredential to the server for validation
-        alert.log("Authentication successful:", publicKeyCredential);
+        alert("Authentication successful:", publicKeyCredential);
     } catch (error) {
-        alert.error("Authentication failed:", error);
+        alert("Authentication failed:", error);
     }
 });
 
