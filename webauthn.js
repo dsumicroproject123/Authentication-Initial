@@ -9,7 +9,7 @@ registerButton.addEventListener("click", async () => {
             publicKey: {
                 // User and challenge information
                 rp: { name: "http://127.0.0.1:5500/register.html" },
-                user: { id: new Uint8Array(16), name: "harshalkanaskar2005@gmail.com", displayName: "Harshal kanaskar" },
+                user: { id: new Uint8Array(16), name: "harshalkanaskar1998@gmail.com", displayName: "Harshal kanaskar" },
                 challenge: new Uint8Array(32),
 
                 // Specify the desired authenticator
